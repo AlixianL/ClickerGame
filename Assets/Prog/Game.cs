@@ -13,29 +13,41 @@ public class Game : MonoBehaviour
     public float scoreIncreasedPerSecond;
     public float x;
 
-
-    public int shop1prize;
-    public TMP_Text shop1text;
-
-    public int shop2prize;
-    public TMP_Text shop2text;
-
-    public int shop3prize;
-    public TMP_Text shop3text;
-
-    public TMP_Text amount1Text;
+    [Header("---------Shop1---------")]
+    public float shop1prize;
     public int amount1;
-    public float amount1Profit;
+    [Header(":Shop1Text")]
+    public TMP_Text shop1text;
+    public TMP_Text amount1Text;
 
-    public TMP_Text amount2Text;
+
+
+    [Header("---------Shop2---------")]
+    public int shop2prize;
     public int amount2;
     public float amount2Profit;
+    [Header(":Shop2Text")]
+    public TMP_Text shop2text;
+    public TMP_Text amount2Text;
 
-    public TMP_Text amount3Text;
+
+
+
+    [Header("---------Shop3---------")]
+    public int shop3prize;
     public int amount3;
     public float amount3Profit;
+    [Header(":Shop3Text")]
+    public TMP_Text shop3text;
+    public TMP_Text amount3Text;
 
+
+
+
+
+    [Header("---------Click---------")]
     public int upgradePrize;
+    [Header(":ClickText")]
     public TMP_Text upgradeText;
 
 
@@ -85,9 +97,9 @@ public class Game : MonoBehaviour
         {
             currentScore -= shop1prize;
             amount1 += 1;
-            amount1Profit += 1;
-            x += 10;
-            shop1prize += 25;
+            x += 1;
+            shop1prize *= 1.15f;
+            shop1prize = Mathf.Ceil(shop1prize);
         }
     }
 
@@ -99,7 +111,7 @@ public class Game : MonoBehaviour
             currentScore -= shop2prize;
             amount2 += 1;
             amount2Profit += 1;
-            x += 1000000;
+            x += 8;
             shop2prize += 100;
         }
     }
