@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using Random = UnityEngine.Random;
 
 public class Game : MonoBehaviour
 {
@@ -48,6 +49,9 @@ public class Game : MonoBehaviour
     [Header(":ClickText")]
     public TMP_Text upgradeText;
 
+    public GameObject plusObject;
+    public Text plusText;
+
 
 
 
@@ -77,6 +81,8 @@ public class Game : MonoBehaviour
 
         upgradeText.text = "Cost :" + upgradePrize + " $";
 
+        plusText.text = " + " + hitPower;
+
 
 
 
@@ -87,6 +93,17 @@ public class Game : MonoBehaviour
     public void Hit()
     {
         currentScore += hitPower;
+        plusObject.SetActive(false);
+        plusObject.transform.position = new Vector3(Random.Range(-92, -92), Random.Range(80, 80 ), 63);
+        plusObject.SetActive(true);
+
+        StopAllCoroutines();
+        StartCoroutine(Fly());
+            
+            
+            
+            
+            
     }
 
     public void Shop1()
@@ -136,6 +153,19 @@ public class Game : MonoBehaviour
             hitPower *= 2;
             upgradePrize *= 3;
         }
+    }
+
+
+    IEnumerator Fly()
+    {
+        for (int i = 0; i <= 19; i++) ;
+        {
+            yield return new WaitForSeconds(0.01f);
+            plusObject.transform.position = new Vector3(plusObject.transform.position.x, plusObject.transform.position.y + 2, 0);
+
+        }
+
+        plusObject.SetActive(false);
     }
 
 
