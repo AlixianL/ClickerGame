@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
-public class MusicSlidder : MonoBehaviour
+public class MusicSlidderprog : MonoBehaviour
 {
     [SerializeField] private AudioMixer myMixer;
     [SerializeField] private Slider musicSlider;
@@ -41,7 +41,7 @@ public class MusicSlidder : MonoBehaviour
     private void LoadVolume()
     {
         musicSlider.value = PlayerPrefs.GetFloat("musicVolume");
-        musicSlider.value = PlayerPrefs.GetFloat("SFXVolume");
+        SFXSlider.value = PlayerPrefs.GetFloat("SFXVolume");
 
         SetMusicVolume();
         SetSFXVolume();

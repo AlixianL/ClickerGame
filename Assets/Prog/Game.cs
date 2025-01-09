@@ -23,9 +23,8 @@ public class Game : MonoBehaviour
 
 
     [Header("---------Shop2---------")]
-    public int shop2prize;
+    public float shop2prize;
     public int amount2;
-    public float amount2Profit;
     [Header(":Shop2Text")]
     public TMP_Text shop2text;
     public TMP_Text amount2Text;
@@ -34,9 +33,8 @@ public class Game : MonoBehaviour
 
 
     [Header("---------Shop3---------")]
-    public int shop3prize;
+    public float shop3prize;
     public int amount3;
-    public float amount3Profit;
     [Header(":Shop3Text")]
     public TMP_Text shop3text;
     public TMP_Text amount3Text;
@@ -110,9 +108,10 @@ public class Game : MonoBehaviour
         {
             currentScore -= shop2prize;
             amount2 += 1;
-            amount2Profit += 1;
             x += 8;
-            shop2prize += 100;
+            shop2prize *= 1.15f;
+            shop2prize = Mathf.Ceil(shop2prize);
+
         }
     }
 
@@ -122,9 +121,9 @@ public class Game : MonoBehaviour
         {
             currentScore -= shop3prize;
             amount3 += 1;
-            amount3Profit += 1;
-            x += 1000000;
-            shop3prize += 300;
+            x += 50;
+            shop3prize *= 1.15f;
+            shop3prize = Mathf.Ceil(shop3prize);
         }
     }
 
