@@ -45,7 +45,7 @@ public class Game : MonoBehaviour
 
 
     [Header("---------Click---------")]
-    public int upgradePrize;
+    public float upgradePrize;
     [Header(":ClickText")]
     public TMP_Text upgradeText;
 
@@ -81,7 +81,7 @@ public class Game : MonoBehaviour
 
         upgradeText.text = "Cost :" + upgradePrize + " $";
 
-        plusText.text = " + " + hitPower;
+        plusText.text = $" +  {hitPower}" ;
 
 
 
@@ -94,7 +94,10 @@ public class Game : MonoBehaviour
     {
         currentScore += hitPower;
         plusObject.SetActive(false);
-        plusObject.transform.position = new Vector3(Random.Range(-92, -92), Random.Range(80, 80 ), 63);
+        var t = plusObject.transform as RectTransform;
+        var x = Random.Range(-Screen.width/2, Screen.width/2);
+        var y = Random.Range(-Screen.height / 2, Screen.height/2);
+        t.anchoredPosition= new Vector2(x,y);
         plusObject.SetActive(true);
 
         StopAllCoroutines();
@@ -151,20 +154,14 @@ public class Game : MonoBehaviour
         {
             currentScore -= upgradePrize;
             hitPower *= 2;
-            upgradePrize *= 3;
+            upgradePrize *= 1.15f;
         }
     }
 
 
     IEnumerator Fly()
     {
-        for (int i = 0; i <= 19; i++) ;
-        {
-            yield return new WaitForSeconds(0.01f);
-            plusObject.transform.position = new Vector3(plusObject.transform.position.x, plusObject.transform.position.y + 2, 0);
-
-        }
-
+        yield return new WaitForSeconds(0.1f);
         plusObject.SetActive(false);
     }
 

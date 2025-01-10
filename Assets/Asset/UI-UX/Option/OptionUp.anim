@@ -32,7 +32,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.75
-        value: 831.6
+        value: 1050
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -82,7 +82,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: BoutonOption
+    path: BoutonOptionUp
     classID: 1
     script: {fileID: 0}
     flags: 16
@@ -104,7 +104,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3877924977
+      path: 2956006525
       attribute: 2086281974
       script: {fileID: 0}
       typeID: 1
@@ -149,7 +149,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.75
-        value: 831.6
+        value: 1050
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -199,7 +199,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: BoutonOption
+    path: BoutonOptionUp
     classID: 1
     script: {fileID: 0}
     flags: 16

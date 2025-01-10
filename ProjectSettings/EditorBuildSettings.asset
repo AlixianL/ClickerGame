@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/New Folder/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/MapClicker.unity
+    path: Assets/Map/MapClicker.unity
     guid: 40c7327bc70a7b04a8b9aab4a17a0fd6
   m_configObjects: {}
