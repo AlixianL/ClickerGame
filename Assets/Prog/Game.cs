@@ -71,13 +71,13 @@ public class Game : MonoBehaviour
         scoreIncreasedPerSecond = x * Time.deltaTime;
         currentScore = currentScore + scoreIncreasedPerSecond;
 
-        shop1text.text = "" + shop1prize + "";
-        shop2text.text = "" + shop2prize + "";
-        shop3text.text = "" + shop3prize + "";
+        shop1text.text = "" + shop1prize + "$";
+        shop2text.text = "" + shop2prize + "$";
+        shop3text.text = "" + shop3prize + "$";
 
-        amount1Text.text = " " + amount1 + ":";
-        amount2Text.text = " " + amount2 + ":";
-        amount3Text.text = " " + amount3 + ":";
+        amount1Text.text = "Cps " + amount1 + ":";
+        amount2Text.text = "Cps " + amount2 + ":";
+        amount3Text.text = "Cps " + amount3 + ":";
 
         upgradeText.text = "Cost :" + upgradePrize + " $";
 
@@ -155,6 +155,7 @@ public class Game : MonoBehaviour
             currentScore -= upgradePrize;
             hitPower *= 2;
             upgradePrize *= 1.15f;
+            upgradePrize = Mathf.Ceil(upgradePrize);
         }
     }
 
